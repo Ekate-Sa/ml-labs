@@ -98,6 +98,7 @@ def calc_recall(ys_pred, ys_test):
     for idx in ys_pred:
         if (ys_pred[idx] == ys_test[idx]):
             trues += 1
+    print("trues: ", trues)
     recall = trues / len(ys_pred)
     return recall
 
@@ -136,7 +137,7 @@ del xs_train["index"]
 # Start here
 #====================
 
-for k in range(1,5):
+for k in range(1,6):
     ys_pred = knn_predict(xs_test, xs_train, ys_train, k)
     recall = calc_recall(ys_pred[0], ys_test[8])
     # print(ys_pred,"\n", ys_test)
